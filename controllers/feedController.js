@@ -18,7 +18,7 @@ exports.createFeed = async (req, res) => {
         await newFeed.save();
         res.redirect('/feed');
     } catch (err) {
-        // اگر ولیدیشن خطا داد، دوباره صفحه را با پیام خطا رندر می‌کنیم
+        
         const feeds = await Feed.find().sort({ createdAt: -1 });
         res.render('index', { feeds, error: err.message });
     }

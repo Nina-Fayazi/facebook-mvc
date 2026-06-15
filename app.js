@@ -6,7 +6,6 @@ const feedRoutes = require('./routes/feedRoutes');
 
 const app = express();
 
-
 connectDB();
 
 
