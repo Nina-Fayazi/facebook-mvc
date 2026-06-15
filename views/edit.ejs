@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Edit Page</h1>
+
+    <% if (error) { %>
+        <div style="color: red; font-weight: bold;"><%= error %></div>
+    <% } %>
+
+    <form action="/feed/<%= feed._id %>?_method=PUT" method="POST">
+        <h3>Edit a Post</h3>
+        <input type="text" name="name" value="<%= feed.name %>" required><br><br>
+        <textarea name="message" required><%= feed.message %></textarea><br><br>
+        <button type="submit" style="background: blue; color: white;">Submit</button>
+    </form>
+    <br>
+    <a href="/feed/<%= feed._id %>">Cancel</a>
+</body>
+</html>
